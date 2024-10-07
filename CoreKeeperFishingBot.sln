@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35208.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreKeeperFishingBot", "CoreKeeperFishingBot\CoreKeeperFishingBot.csproj", "{ABDF8A1B-5480-4A24-BAFF-D64D3EA026B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VersaScreenCapture", "VersaScreenCapture\VersaScreenCapture.csproj", "{276BB2C7-3AA0-471F-AA4A-C5A51547B256}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABDF8A1B-5480-4A24-BAFF-D64D3EA026B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABDF8A1B-5480-4A24-BAFF-D64D3EA026B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABDF8A1B-5480-4A24-BAFF-D64D3EA026B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABDF8A1B-5480-4A24-BAFF-D64D3EA026B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{276BB2C7-3AA0-471F-AA4A-C5A51547B256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{276BB2C7-3AA0-471F-AA4A-C5A51547B256}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{276BB2C7-3AA0-471F-AA4A-C5A51547B256}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{276BB2C7-3AA0-471F-AA4A-C5A51547B256}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {908F255B-63E5-4C0E-A536-E4B3FB1B36B0}
+	EndGlobalSection
+EndGlobal
