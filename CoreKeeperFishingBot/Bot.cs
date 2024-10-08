@@ -74,8 +74,7 @@ namespace CoreKeeperFishingBot
             var task = Task.Run(() =>
             {
                 cancellationToken.ThrowIfCancellationRequested();
-                _templateMatching.MatchFrameWithTemplate(); // TODO: hack to clean-up latest frame.
-
+                
                 try
                 {
                     _templateMatching.MatchFrameWithTemplate(); // TODO: hack to clean-up latest frame.
