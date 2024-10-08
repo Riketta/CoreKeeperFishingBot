@@ -48,15 +48,11 @@ namespace CoreKeeperFishingBot
                     Thread.Sleep(_config.AttemptInterval);
 
                     Console.WriteLine("Waiting for a bite.");
-                    if (!WaitForBite(_config.WaitForBiteTimeout))
-                    {
+                    if (WaitForBite(_config.WaitForBiteTimeout))
+                        Console.WriteLine("[+] Looting.");
+                    else
                         Console.WriteLine("[-] Attempt failed.");
-                        WindowsManager.RightMouseClickMouseEvent(_windowHandle);
-                        Thread.Sleep(_config.AttemptInterval);
-                        continue;
-                    }
 
-                    Console.WriteLine("[+] Looting.");
                     WindowsManager.RightMouseClickMouseEvent(_windowHandle);
                     Thread.Sleep(_config.AttemptInterval);
                 }
@@ -75,7 +71,7 @@ namespace CoreKeeperFishingBot
             var task = Task.Run(() =>
             {
                 cancellationToken.ThrowIfCancellationRequested();
-                
+
                 try
                 {
                     _templateMatching.MatchFrameWithTemplate(); // TODO: hack to clean-up latest frame.
