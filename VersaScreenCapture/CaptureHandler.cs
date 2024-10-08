@@ -88,8 +88,8 @@ namespace VersaScreenCapture
             CaptureFramePool = Direct3D11CaptureFramePool.CreateFreeThreaded(
                 windowsRuntimeDevice,
                 DirectXPixelFormat.B8G8R8A8UIntNormalized,
-                30, // total frames in frame pool // was 60 initially
-                CaptureItem.Size // size of each frame
+                30, // Total frames in frame pool.
+                CaptureItem.Size // Size of each frame.
                 );
 
             CaptureSession = CaptureFramePool.CreateCaptureSession(CaptureItem);
