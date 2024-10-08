@@ -45,6 +45,7 @@ namespace CoreKeeperFishingBot
                 try
                 {
                     WindowsManager.RightMouseClickMouseEvent(_windowHandle);
+                    Thread.Sleep(_config.AttemptInterval);
 
                     Console.WriteLine("Waiting for a bite.");
                     if (!WaitForBite(_config.WaitForBiteTimeout))
