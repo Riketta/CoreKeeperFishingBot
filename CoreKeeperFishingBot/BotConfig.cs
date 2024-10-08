@@ -10,7 +10,7 @@ namespace CoreKeeperFishingBot
     internal class BotConfig
     {
         public bool Debug { get; set; } = true;
-        public bool CaptureScreen { get; set; } = true;
+        public bool CaptureScreen { get; set; } = false;
         public string PathToTemplate { get; set; } = @"Templates\TemplateSmall.png";
         public double TemplateMatchingThreshold { get; set; } = 0.85;
         public int RightClickDuration { get; set; } = 50;

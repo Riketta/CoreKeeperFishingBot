@@ -15,17 +15,17 @@ namespace CoreKeeperFishingBot
             Process game = GetGameProcess();
             BotConfig config = new BotConfig();
 
-            //UnityGameWindowFinder gameWindowFinder = new UnityGameWindowFinder();
-            //IntPtr windowHandle = gameWindowFinder.FindMainWindow(game.Id);
-
-            Console.WriteLine("Press \"Enter\" to capture game window handle in 3 seconds.");
+            Console.WriteLine("Press \"Enter\" to capture game window handle in 3 seconds. Switch to game window during this time.");
             Console.ReadLine();
             for (int i = 3; i > 0; i--)
             {
                 Console.WriteLine($"{i}...");
                 Thread.Sleep(1000);
             }
-            IntPtr windowHandle = NativeMethods.GetForegroundWindow();
+
+            UnityGameWindowFinder gameWindowFinder = new UnityGameWindowFinder();
+            IntPtr windowHandle = gameWindowFinder.FindMainWindow(game.Id);
+            //IntPtr windowHandle = NativeMethods.GetForegroundWindow();
             Console.WriteLine($"Game window handle: {windowHandle}.");
 
             TemplateMatching templateMatching = new TemplateMatching(config.PathToTemplate, config.TemplateMatchingThreshold);
