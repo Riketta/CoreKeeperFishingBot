@@ -75,6 +75,12 @@ namespace CoreKeeperFishingBot
             {
                 cancellationToken.ThrowIfCancellationRequested();
 
+                try
+                {
+                    _templateMatching.MatchFrameWithTemplate(); // TODO: hack to clean-up latest frame.
+                }
+                catch { }
+
                 while (true)
                 {
                     double matchWeight = 0;
