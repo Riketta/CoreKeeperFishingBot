@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Bot.cs" />
     <Compile Include="BotConfig.cs" />
+    <Compile Include="Keybindings.cs" />
     <Compile Include="OpenCV\LatestFrame.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

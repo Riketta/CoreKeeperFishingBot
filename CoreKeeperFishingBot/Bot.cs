@@ -44,7 +44,7 @@ namespace CoreKeeperFishingBot
                 Console.WriteLine("Fishing attempt.");
                 try
                 {
-                    WindowsManager.RightMouseClickMouseEvent(_windowHandle);
+                    UseItem();
                     Thread.Sleep(_config.AttemptInterval);
 
                     Console.WriteLine("Waiting for a bite.");
@@ -53,7 +53,7 @@ namespace CoreKeeperFishingBot
                     else
                         Console.WriteLine("[-] Attempt failed.");
 
-                    WindowsManager.RightMouseClickMouseEvent(_windowHandle);
+                    UseItem();
                     Thread.Sleep(_config.AttemptInterval);
                 }
                 catch (Exception ex)
@@ -110,6 +110,14 @@ namespace CoreKeeperFishingBot
             }
 
             return task.Result;
+        }
+
+        private void UseItem()
+        {
+            if (_config.Keybindings.UseItemsUsingKeyboard)
+                WindowsManager.PressKeyUsingSendMessage(_windowHandle, _config.Keybindings.UseItemKey, _config.HoldKeyDownDuration);
+            else
+                WindowsManager.RightMouseClickMouseEvent(_windowHandle, _config.HoldKeyDownDuration);
         }
     }
 }

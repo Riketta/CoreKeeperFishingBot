@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenCvSharp.Internal;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -21,18 +22,32 @@ namespace CoreKeeperFishingBot
             return color;
         }
 
-        public static void RightMouseClickSendMessage(IntPtr window)
+        public static void RightMouseClickSendMessage(IntPtr window, int holdDuration)
         {
             NativeMethods.SendMessage(window, NativeMethods.WM_RBUTTONDOWN, (uint)NativeMethods.VirtualKeys.RightButton, IntPtr.Zero);
-            Thread.Sleep(50);
+            Thread.Sleep(holdDuration);
             NativeMethods.SendMessage(window, NativeMethods.WM_RBUTTONUP, (uint)NativeMethods.VirtualKeys.RightButton, IntPtr.Zero);
         }
 
-        public static void RightMouseClickMouseEvent(IntPtr window)
+        public static void RightMouseClickMouseEvent(IntPtr window, int holdDuration)
         {
             NativeMethods.mouse_event(NativeMethods.MOUSEEVENTF_RIGHTDOWN, 0, 0, 0, UIntPtr.Zero);
-            Thread.Sleep(50);
+            Thread.Sleep(holdDuration);
             NativeMethods.mouse_event(NativeMethods.MOUSEEVENTF_RIGHTUP, 0, 0, 0, UIntPtr.Zero);
+        }
+
+        public static void PressKeyUsingSendMessage(IntPtr handle, NativeMethods.VirtualKeys key, int holdDuration)
+        {
+            NativeMethods.SendMessage(handle, NativeMethods.WM_KEYDOWN, (uint)key, IntPtr.Zero);
+            Thread.Sleep(holdDuration);
+            NativeMethods.SendMessage(handle, NativeMethods.WM_KEYUP, (uint)key, IntPtr.Zero);
+        }
+
+        public static void PressKeyUsingPostMessage(IntPtr handle, NativeMethods.VirtualKeys key, int holdDuration)
+        {
+            NativeMethods.PostMessage(handle, NativeMethods.WM_KEYDOWN, (uint)key, IntPtr.Zero);
+            Thread.Sleep(holdDuration);
+            NativeMethods.PostMessage(handle, NativeMethods.WM_KEYUP, (uint)key, IntPtr.Zero);
         }
 
         public static Point GetMousePosition()
